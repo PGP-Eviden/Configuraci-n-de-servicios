@@ -24,7 +24,7 @@ function CreateMetricAlert {
         -TargetResourceScope $DBId `
         -Severity 3 `
         -TargetResourceRegion $location `
-        -Description $description
+        -Description $description 
     
     # -TargetResourceId $targetResourceId `
     
