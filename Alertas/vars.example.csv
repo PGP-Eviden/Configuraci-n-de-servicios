@@ -1,4 +1,4 @@
 recurso;nombre;limites
 vm;VM1;CPU=0.3,RAM=80,AV=90
 st;cloudshellstacc1;CAP=200,LAT=150
-st;storageaccount;CAP=350,LAT=100
+DB;*;DB_ALM=90,DB_CPU=90,DB_MEM=90,DB_FCON=1

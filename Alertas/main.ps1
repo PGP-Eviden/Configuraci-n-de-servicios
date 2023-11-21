@@ -72,18 +72,26 @@ $metricNameDict = @{
     "CPU" = "Percentage CPU"
     "RAM" = "Available Memory Bytes"
     "AV"  = "VmAvailabilityMetric"
-    #"CAP" = "UsedCapacity"
-    #"LAT" = "SuccessServerLatency"
+    "CAP" = "UsedCapacity"
+    "LAT" = "SuccessServerLatency"
     "DIS" = "Availability"
+    "DB_ALM" = "storage_percent"
+    "DB_CPU" = "cpu_percent"
+    "DB_MEM" = "memory_percent"
+    "DB_FCON" = "connections_failed"
 }
 
 $metricMultiplier = @{
     "CPU" = 1
     "RAM" = [Math]::Pow(1000, 2)
     "AV"  = 0.01
-    #"CAP" = [Math]::Pow(1024, 3)
-    #"LAT" = 1
+    "CAP" = [Math]::Pow(1024, 3)
+    "LAT" = 1
     "DIS" = 1
+    "DB_ALM" = 1
+    "DB_CPU" = 1
+    "DB_MEM" = 1
+    "DB_FCON" = 1
 }
 
 function GetVmMemory {
@@ -96,6 +104,7 @@ function GetVmMemory {
 }
 
 $storageAccounts = Get-AzStorageAccount
+$DataBasesServers = Get-AzPostgreSqlFlexibleServer
 
 function ParseResource {
     param ( [array]$resourceLine )
@@ -134,6 +143,31 @@ function ParseResource {
             return [ordered]@{resource = $resource; name = $name; location = $location; memoryInMB = $vmMemoryInMB; limits = $(ReadResourceLimits $resourceLine[2] $vmMemoryInMB); id = $vmId }
         }
         
+    }
+    elseif ($resource -eq "DB") {
+        if ($name -eq "*") {
+            [hashtable]$limits = ReadResourceLimits $resourceLine[2] 
+            $restSt = @()
+            $DataBasesServers | ForEach-Object {
+                #$stName = $_.StorageAccountName
+                $DBName = $_.Name
+                #$currentStorageAccount = $storageAccounts | Where-Object { $stName -eq $_.StorageAccountName }
+                $DBId = $_.Id
+                $restSt += [ordered]@{resource = $resource; name = $DBName; location = $_.Location; limits = $limits; id = $DBId }
+            }
+            return $restSt
+        }
+       
+        else {
+            [hashtable]$limits = ReadResourceLimits $resourceLine[2] 
+            $currentStorageAccount = $storageAccounts | Where-Object { $_.StorageAccountName -eq $name }
+            $SAId = $currentStorageAccount.Id
+            return [ordered]@{resource = $resource; name = $name; location = $currentStorageAccount.Location; limits = $limits; id = $SAId }
+        }
+    
+            <# Action to perform if the condition is true #>
+        
+        <# Action when this condition is true #>
     }
     else {
         if ($name -eq "*") {
@@ -226,6 +260,8 @@ $actGroup = CreateActionGroup $rg $EmailFile
 # 3. Create alerts
 Import-Module -Name .\vm.psm1 -Prefix vm -Force
 Import-Module -Name .\stacc.psm1 -Prefix st -Force
+Import-Module -Name .\DBServer.psm1 -Prefix DB -Force
+
 
 $rs | ForEach-Object {
     if ($_["resource"] -eq "st") { 
@@ -273,6 +309,54 @@ $rs | ForEach-Object {
                 $SAId `
                 $description
         
+        }
+    }
+    elseif ($_["resource"] -eq "DB") {
+        foreach ($key in $_.limits.keys) {
+
+            $val = $_.limits[$key]
+
+            $DBWindowSize = New-TimeSpan -Hours 6
+            $DBFrequency = New-TimeSpan -Minutes 5
+            
+            
+            $isGreaterThan =  "GreaterThanOrEqual"
+            $isTotal = ($key -eq "connections_failed") ? "Total" : "Average"
+
+
+
+            $DBId = $_.id
+
+            $DBCriteria = New-AzMetricAlertRuleV2Criteria `
+                -MetricName $key `
+                -TimeAggregation $isTotal `
+                -Operator $isGreaterThan `
+                -Threshold $val
+
+                $shortKey = ($key -eq "storage_percent") ? "porcentaje de almacenamiento" 
+                : ($key -eq "cpu_percent") ? "porcentaje de CPU" 
+                : ($key -eq "memory_percent") ? "porcentaje de memoria"
+                : ($key -eq "connections_failed") ? "número de errores de conexión"
+                : "Error"  
+            
+            $unit = ($key -eq "connections_failed") ? "error"
+                :  "%"    
+               
+                
+                #$computed = ($key -eq "Availability") ? $val * 100 : $val
+                
+            
+            $description = "Esta alerta se ejecuta cuando el  $shortKey es mayor que $val $unit" 
+
+            DBCreateMetricAlert $rg `
+                "CONTURSA-Azure-$($_.resource)-$key-$($_.name)" `
+                $DBCriteria `
+                $DBWindowSize `
+                $DBFrequency `
+                $_.location `
+                $actGroup `
+                $DBId `
+                $description
         }
     }
     else {
