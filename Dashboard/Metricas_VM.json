@@ -1,0 +1,249 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 7,
+              "y": 0,
+              "colSpan": 11,
+              "rowSpan": 8
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "ComponentId",
+                  "value": "azure monitor",
+                  "isOptional": true
+                },
+                {
+                  "name": "TimeContext",
+                  "value": null,
+                  "isOptional": true
+                },
+                {
+                  "name": "ResourceIds",
+                  "value": [
+                    "azure monitor"
+                  ],
+                  "isOptional": true
+                },
+                {
+                  "name": "ConfigurationId",
+                  "value": "/subscriptions/<subscriptionID/resourcegroups/<resourceGroupName>/providers/microsoft.insights/workbooks/f2f90eca-081a-454c-b0b8-55e46607d18d",
+                  "isOptional": true
+                },
+                {
+                  "name": "Type",
+                  "value": "workbook",
+                  "isOptional": true
+                },
+                {
+                  "name": "GalleryResourceType",
+                  "value": "azure monitor",
+                  "isOptional": true
+                },
+                {
+                  "name": "PinName",
+                  "value": "Métricas clave VM",
+                  "isOptional": true
+                },
+                {
+                  "name": "StepSettings",
+                  "value": "{\"chartId\":\"workbookdb19a8d8-91af-44ea-951d-5ffa133b2ebe\",\"version\":\"MetricsItem/2.0\",\"size\":2,\"chartType\":-3,\"resourceType\":\"microsoft.compute/virtualmachines\",\"metricScope\":0,\"resourceParameter\":\"VirtualMachines\",\"resourceIds\":[\"{VirtualMachines}\"],\"timeContextFromParameter\":\"TimeRange\",\"timeContext\":{\"durationMs\":3600000},\"metrics\":[{\"namespace\":\"microsoft.compute/virtualmachines\",\"metric\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"aggregation\":4}],\"title\":\"Uso de CPU de las máquinas virtuales\",\"mapSettings\":{\"locInfo\":\"AzureResource\",\"locInfoColumn\":\"Name\",\"sizeSettings\":\"Name\",\"sizeAggregation\":\"Count\",\"legendMetric\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"legendAggregation\":\"Max\",\"itemColorSettings\":{\"nodeColorField\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"colorAggregation\":\"Max\",\"type\":\"heatmap\",\"heatmapPalette\":\"greenRed\",\"heatmapMin\":30,\"heatmapMax\":80},\"numberFormatSettings\":{\"unit\":1,\"options\":{\"style\":\"decimal\",\"maximumFractionDigits\":1}}},\"graphSettings\":{\"type\":2,\"topContent\":{\"columnMatch\":\"Name\",\"formatter\":13,\"formatOptions\":{\"linkTarget\":\"Resource\",\"showIcon\":false}},\"centerContent\":{\"columnMatch\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"formatter\":12,\"formatOptions\":{\"linkTarget\":\"WorkbookTemplate\",\"linkIsContextBlade\":true,\"showIcon\":true,\"workbookContext\":{\"componentIdSource\":\"column\",\"componentId\":\"Name\",\"resourceIdsSource\":\"column\",\"resourceIds\":\"Name\",\"templateIdSource\":\"static\",\"templateId\":\"Community-Workbooks/Virtual Machines/Virtual machine details\",\"typeSource\":\"static\",\"type\":\"workbook\",\"gallerySource\":\"static\",\"gallery\":\"microsoft.compute/virtualmachines\",\"locationSource\":\"default\"}},\"numberFormat\":{\"unit\":1,\"options\":{\"style\":\"decimal\",\"useGrouping\":false,\"maximumFractionDigits\":1},\"emptyValCustomText\":\"-\"}},\"hivesContent\":{\"columnMatch\":\"Subscription\",\"formatter\":13,\"formatOptions\":{\"linkTarget\":\"Resource\",\"showIcon\":true}},\"nodeIdField\":\"Name\",\"nodeSize\":null,\"staticNodeSize\":100,\"colorSettings\":{\"nodeColorField\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"type\":4,\"heatmapPalette\":\"greenRed\",\"heatmapMin\":30,\"heatmapMax\":80,\"emptyValueColor\":\"gray\"},\"groupByField\":\"Subscription\",\"hivesMargin\":5},\"gridSettings\":{\"formatters\":[{\"columnMatch\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"formatter\":1,\"numberFormat\":{\"unit\":1,\"options\":null}}],\"rowLimit\":10000,\"filter\":true,\"labelSettings\":[{\"columnId\":\"microsoft.compute/virtualmachines--Percentage CPU\",\"label\":\"Porcentaje de CPU (promedio)\"},{\"columnId\":\"microsoft.compute/virtualmachines--Percentage CPU Timeline\",\"label\":\"Escala de tiempo de porcentaje de CPU\"}]},\"sortBy\":[],\"showExportToExcel\":true}",
+                  "isOptional": true
+                },
+                {
+                  "name": "ParameterValues",
+                  "value": {
+                    "Subscription": {
+                      "type": 6,
+                      "value": [
+                        "/subscriptions/<subscriptionID"
+                      ],
+                      "isPending": false,
+                      "isWaiting": false,
+                      "isFailed": false,
+                      "isGlobal": false,
+                      "labelValue": "<label>",
+                      "displayName": "Subscription",
+                      "formattedValue": "'/subscriptions/<subscriptionID>'"
+                    },
+                    "VirtualMachines": {
+                      "type": 5,
+                      "value": [
+                        "<VMlist>"
+                      ],
+                      "isPending": false,
+                      "isWaiting": false,
+                      "isFailed": false,
+                      "isGlobal": false,
+                      "labelValue": "AZULP0, AzuCit1 (y 15 más)",
+                      "displayName": "Virtual Machines",
+                      "formattedValue": "<VMlistInline>"
+                    },
+                    "TimeRange": {
+                      "type": 4,
+                      "value": {
+                        "durationMs": 3600000
+                      },
+                      "isPending": false,
+                      "isWaiting": false,
+                      "isFailed": false,
+                      "isGlobal": false,
+                      "labelValue": "Últimas hora",
+                      "displayName": "Intervalo de tiempo",
+                      "formattedValue": "Últimas hora"
+                    },
+                    "Message": {
+                      "type": 1,
+                      "value": "# 17 / 17",
+                      "isPending": false,
+                      "isWaiting": false,
+                      "isFailed": false,
+                      "isGlobal": false,
+                      "labelValue": "# 17 / 17",
+                      "displayName": "Message",
+                      "formattedValue": "# 17 / 17"
+                    },
+                    "selectedTab": {
+                      "type": 1,
+                      "value": "Overview",
+                      "formattedValue": "Overview"
+                    }
+                  },
+                  "isOptional": true
+                },
+                {
+                  "name": "Location",
+                  "value": "westeurope",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/AppInsightsExtension/PartType/PinnedNotebookMetricsPart"
+            }
+          },
+          "1": {
+            "position": {
+              "x": 0,
+              "y": 1,
+              "colSpan": 7,
+              "rowSpan": 7
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.compute/virtualmachines",
+                            "subscription": {
+                              "subscriptionId": "cdddccda-bc78-4b15-b953-e4cc3f1df619",
+                              "displayName": "UQUIFA Prod",
+                              "uniqueDisplayName": "UQUIFA Prod"
+                            }
+                          },
+                          "name": "Available Memory Bytes",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.compute/virtualmachines",
+                          "metricVisualization": {
+                            "displayName": "Available Memory Bytes (Preview)",
+                            "resourceDisplayName": "UQUIFA Prod"
+                          }
+                        }
+                      ],
+                      "title": "Promedio Available Memory Bytes (Preview) durante undefined in undefined region  por ResourceId",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId",
+                        "sort": 2,
+                        "top": 17
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "es-es"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "auto",
+                "relative": "24h"
+              },
+              "displayCache": {
+                "name": "Hora UTC",
+                "value": "Últimas 24 horas"
+              },
+              "filteredPartIds": [
+                "StartboardPart-PinnedNotebookMetricsPart-4bd999b3-ac84-4f13-88a2-422635cb5e9b",
+                "StartboardPart-MonitorChartPart-4bd999b3-ac84-4f13-88a2-422635cb5e9d"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "Metricas_VM",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "INSERT LOCATION",
+  "tags": {
+    "hidden-title": "Metricas_VM"
+  },
+  "apiVersion": "2015-08-01-preview"
+}

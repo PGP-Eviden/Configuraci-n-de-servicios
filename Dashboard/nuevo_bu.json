@@ -1,0 +1,188 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 4,
+              "y": 0,
+              "colSpan": 11,
+              "rowSpan": 7
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                },
+                {
+                  "name": "options",
+                  "value": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.recoveryservices/vaults",
+                            "subscription": {
+                              "subscriptionId": "0b6b4c37-f1bf-4ce2-a367-85ec50c803ea",
+                              "displayName": "UQUIFA prod",
+                              "uniqueDisplayName": "UQUIFA prod"
+                            }
+                          },
+                          "name": "BackupHealthEvent",
+                          "aggregationType": 7,
+                          "namespace": "microsoft.recoveryservices/vaults",
+                          "metricVisualization": {
+                            "displayName": "Backup Health Events (preview)",
+                            "resourceDisplayName": "UQUIFA prod"
+                          }
+                        }
+                      ],
+                      "title": "Backup Health Events Count",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        }
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId"
+                      },
+                      "timespan": {
+                        "relative": {
+                          "duration": 86400000
+                        },
+                        "showUTCTime": false,
+                        "grain": 1
+                      }
+                    }
+                  },
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.recoveryservices/vaults",
+                            "subscription": {
+                              "subscriptionId": "0b6b4c37-f1bf-4ce2-a367-85ec50c803ea",
+                              "displayName": "UQUIFA prod",
+                              "uniqueDisplayName": "UQUIFA prod"
+                            }
+                          },
+                          "name": "BackupHealthEvent",
+                          "aggregationType": 7,
+                          "namespace": "microsoft.recoveryservices/vaults",
+                          "metricVisualization": {
+                            "displayName": "Backup Health Events (preview)",
+                            "resourceDisplayName": "UQUIFA Prod"
+                          }
+                        }
+                      ],
+                      "title": "Backup Health Events Count",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId"
+                      }
+                    }
+                  }
+                }
+              },
+              "filters": {
+                "MsPortalFx_TimeRange": {
+                  "model": {
+                    "format": "local",
+                    "granularity": "auto",
+                    "relative": "1440m"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "es-es"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "30m",
+                "relative": "24h"
+              },
+              "displayCache": {
+                "name": "Hora UTC",
+                "value": "Últimas 24 horas"
+              },
+              "filteredPartIds": [
+                "StartboardPart-MonitorChartPart-23e2d0a2-92d8-4ed1-b550-700928e78139"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "Backup_Health_Metric",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "westeurope",
+  "tags": {
+    "hidden-title": "Backup_Health_Metric"
+  },
+  "apiVersion": "2015-08-01-preview"
+}

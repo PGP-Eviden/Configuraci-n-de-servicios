@@ -1,0 +1,282 @@
+{
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "colSpan": 9,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.compute/virtualmachines",
+                            "subscription": {
+                              "subscriptionId": "0b6b4c37-f1bf-4ce2-a367-85ec50c803ea",
+                              "displayName": "CONTURSA",
+                              "uniqueDisplayName": "CONTURSA"
+                            }
+                          },
+                          "name": "Available Memory Bytes",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.compute/virtualmachines",
+                          "metricVisualization": {
+                            "displayName": "Available Memory Bytes (Preview)",
+                            "resourceDisplayName": "CONTURSA"
+                          }
+                        }
+                      ],
+                      "title": "Average Available Memory Bytes",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId",
+                        "sort": 2,
+                        "top": 17
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "position": {
+              "x": 9,
+              "y": 0,
+              "colSpan": 9,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.compute/virtualmachines",
+                            "subscription": {
+                              "subscriptionId": "0b6b4c37-f1bf-4ce2-a367-85ec50c803ea",
+                              "displayName": "CONTURSA",
+                              "uniqueDisplayName": "CONTURSA"
+                            }
+                          },
+                          "name": "Percentage CPU",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.compute/virtualmachines",
+                          "metricVisualization": {
+                            "displayName": "Percentage CPU",
+                            "resourceDisplayName": "CONTURSA"
+                          }
+                        }
+                      ],
+                      "title": "Average Percentage CPU",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId",
+                        "sort": 2,
+                        "top": 17
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "2": {
+            "position": {
+              "x": 5,
+              "y": 5,
+              "colSpan": 9,
+              "rowSpan": 5
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "options",
+                  "isOptional": true
+                },
+                {
+                  "name": "sharedTimeRange",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/MonitorChartPart",
+              "settings": {
+                "content": {
+                  "options": {
+                    "chart": {
+                      "metrics": [
+                        {
+                          "resourceMetadata": {
+                            "region": "westeurope",
+                            "resourceType": "microsoft.compute/virtualmachines",
+                            "subscription": {
+                              "subscriptionId": "0b6b4c37-f1bf-4ce2-a367-85ec50c803ea",
+                              "displayName": "CONTURSA",
+                              "uniqueDisplayName": "CONTURSA"
+                            }
+                          },
+                          "name": "VmAvailabilityMetric",
+                          "aggregationType": 4,
+                          "namespace": "microsoft.compute/virtualmachines",
+                          "metricVisualization": {
+                            "displayName": "VM Availability Metric (Preview)",
+                            "resourceDisplayName": "CONTURSA"
+                          }
+                        }
+                      ],
+                      "title": "Average VM Availability Metric",
+                      "titleKind": 1,
+                      "visualization": {
+                        "chartType": 2,
+                        "legendVisualization": {
+                          "isVisible": true,
+                          "position": 2,
+                          "hideSubtitle": false
+                        },
+                        "axisVisualization": {
+                          "x": {
+                            "isVisible": true,
+                            "axisType": 2
+                          },
+                          "y": {
+                            "isVisible": true,
+                            "axisType": 1
+                          }
+                        },
+                        "disablePinning": true
+                      },
+                      "grouping": {
+                        "dimension": "Microsoft.ResourceId",
+                        "sort": 2,
+                        "top": 17
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "model": {
+        "timeRange": {
+          "value": {
+            "relative": {
+              "duration": 24,
+              "timeUnit": 1
+            }
+          },
+          "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+        },
+        "filterLocale": {
+          "value": "es-es"
+        },
+        "filters": {
+          "value": {
+            "MsPortalFx_TimeRange": {
+              "model": {
+                "format": "utc",
+                "granularity": "auto",
+                "absolute": {
+                  "fromDate": "2023-06-01T06:39:53.777Z",
+                  "toDate": "2023-06-30T07:39:53.777Z"
+                }
+              },
+              "displayCache": {
+                "name": "Hora UTC",
+                "value": "1/6/2023 para 30/6/2023"
+              },
+              "filteredPartIds": [
+                "StartboardPart-MonitorChartPart-23e2d0a2-92d8-4ed1-b550-700928e7825a",
+                "StartboardPart-MonitorChartPart-23e2d0a2-92d8-4ed1-b550-700928e7825c",
+                "StartboardPart-MonitorChartPart-23e2d0a2-92d8-4ed1-b550-700928e7825e"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "name": "Monthly_Metric_VM",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "westeurope",
+  "tags": {
+    "hidden-title": "Monthly_Metric_VM"
+  },
+  "apiVersion": "2015-08-01-preview"
+}
